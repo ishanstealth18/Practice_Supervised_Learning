@@ -1,9 +1,9 @@
 import sys
 import data_cleaning
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from scikit-learn.preprocessing import StandardScaler
+from scikit-learn.model_selection import train_test_split
+from scikit-learn.linear_model import LogisticRegression
+from scikit-learn.metrics import accuracy_score, classification_report, confusion_matrix
 import joblib
 
 def split_data(df):
