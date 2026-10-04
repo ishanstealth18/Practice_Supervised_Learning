@@ -5,3 +5,4 @@ numpy
 joblib
 streamlit
 sqlite3
+scikit-learn
