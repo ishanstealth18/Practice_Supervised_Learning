@@ -2,7 +2,7 @@ pandas
 matplotlib
 seaborn
 numpy
-sklearn
+scikit-learn
 joblib
 streamlit
 sqlite3
