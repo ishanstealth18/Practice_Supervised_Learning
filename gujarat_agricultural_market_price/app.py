@@ -1,5 +1,7 @@
 import streamlit as st
 import sys
+import pandas as pd
+import joblib
 
 
 def main():
@@ -68,9 +70,28 @@ def main():
 
     commodity_list = ['crops', 'seeds', 'pulses', 'vegetables', 'spices', 'fruits', 'leafy_vegetables', 'other', 'oil']
 
-    st.menu_button(label='Select any district', options=district_list)
-    st.menu_button(label='Select any market', options=market_list, wrap=True)
-    st.menu_button(label='Select any commodity', options=commodity_list)
+
+    input_district = st.selectbox(label='Select any district', options=district_list)
+    input_market = st.selectbox(label='Select any market', options=market_list)
+    input_commodity = st.selectbox(label='Select any commodity', options=commodity_list)
+    input_month = st.slider(label='Select Month', min_value=1, max_value=12)
+
+    if st.button(label='Predict'):
+        predicton_row = [{
+            'district': input_district,
+            'market': input_market,
+            'commodity_category': input_commodity,
+            'months': input_month
+        }]
+
+        df = pd.DataFrame(predicton_row)
+
+        production_model = joblib.load('agri_cat_model.joblib')
+        raw_preds = production_model.predict(df)
+        final_pred_value = max(0.0, float(raw_preds))
+        final_pred_value = round(final_pred_value, 2)
+
+        st.write(f'Final prediction for month {input_month} is {final_pred_value} MT.')
 
 
 if __name__ == "__main__":
