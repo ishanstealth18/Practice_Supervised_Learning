@@ -1,0 +1,7 @@
+joblib
+pandas
+sklearn.model_selection
+sklearn.feature_extraction.text
+sklearn.preprocessing
+sklearn.linear_model
+time
