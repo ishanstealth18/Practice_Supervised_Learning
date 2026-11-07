@@ -23,10 +23,13 @@ def classify_item(input_txt):
 def main():
     st.title("Classify Items")
 
-    input_text = st.text_input(label="Input Item Description")
-    if st.button(label="Submit"):
-        classify_item(input_text)
+    #input_text = st.text_input(label="Input Item Description")
+    #if st.button(label="Submit"):
+    #    classify_item(input_text)
 
+    input_txt = st.chat_input(placeholder="Enter item description...")
+    if input_txt:
+        classify_item(input_txt)
 
 if __name__ == "__main__":
     sys.exit(main())

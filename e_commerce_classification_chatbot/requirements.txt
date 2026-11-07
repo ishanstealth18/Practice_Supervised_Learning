@@ -1,7 +1,4 @@
-joblib
-pandas
-sklearn.model_selection
-sklearn.feature_extraction.text
-sklearn.preprocessing
-sklearn.linear_model
-time
+streamlit~=1.64.0
+joblib~=1.4.2
+scikit-learn~=1.5.2
+pandas~=2.2.3
